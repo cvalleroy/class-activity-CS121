@@ -1,0 +1,48 @@
+1. Git help provides a list of the most commonly used commands in git
+2. Adding -ag pulls up a full list of available commands in git
+3. These two commands link you as a user to the commits you push using git, and associate an email address with them.
+4. --global assigns this username and email to ANY commits made from this machine, rather than commits made to a specific repository.
+
+1. To display hidden files, use dir /ah (Windows) or ls .* (Mac)
+2. There were no hidden files
+4. The folder .git was created after git init was ran.
+5. If .git was deleted, you wouldn't be able to access this folder using git commands.
+6. To check if these old files are working under version control, you could check for this .git folder's presence.
+
+
+1. git status reports if any files have been added, removed, or modified in the repository.
+2. git add names.txt adds the file to repository path information stored in the .git folder.
+3. git commit stages any changes to the repository for commiting. -m included in the command allows for the message "Add our names" to be included with the commit.
+4. the command git add . adds all untracked files to the repository, rather than a specific file.
+5. git commit attempts to commit any changes, but opens a text editor to add a specific commit message.
+6. you would use git commit to leave a detailed commit message, since you would have access to a full text editor space to include details.
+7. git log lists all commits, with the author, date, and commit message, in order that they occurred.
+
+1. Staged: names.txt, Unstaged: movies.txt, Untracked: books.txt bash.exe.stackdump
+Staged: ready to commit
+Unstaged: files located in the directory, but will not be committed with git commands
+Untracked: files not associated with the git path
+2. Only the staged changed would be committed if we were to run git commit.
+3. You would use git add to stage file changes to the repository
+4. To unstage changes, you can run git rm with the specified file to unstage.
+
+1. git diff displays changes made to a file since the last commit.
+2. git diff cached displays a comparison of the file's current version to the version in the last commit.
+3. git rm names.txt --cached
+ git add movies.txt
+4. When altering movies.txt, there is both a staged and unstaged version of the file. If we were to commit, 
+only the staged changes to the file would be committed. The change we made right now would not be commmitted.
+5. deleting names.txt stages this change to the file for the next commit.
+6. renaming movies results in any staged changes to this file being deleted, and the newly named file appearing as
+an untracked change.
+7. git rm movies.txt -f
+git add .
+git commit
+8. index, cache, and stage all refer to files that are ready to commit.
+9. having a stage allows the user to choose certain files for committing, while leaving out others that may be in progress still.
+
+1. git reset --soft "HEAD^" removes the last commit, but still keeps the changes staged.
+2. git reset --hard "HEAD^" removes the last commit, and unstages the changes made in the previous commit.
+3. soft and hard differ according to which command deletes the staged commits (hard) and which does not (soft).
+4. HEAD refers to the top of the commit stack for the master directory of the repository.
+5. HEAD^ (or HEAD^1) refers to the first parent of the most recent commit. 
